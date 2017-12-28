@@ -18,11 +18,14 @@ function viewJSON() {
         /* Aqui l'objecte response representa l'objecte JSON que ens 
            ha retornat el servidor */
            for (rest in response.results) {
-        document.getElementById("results").innerHTML = response.results[rest].name+", "
+
+        document.getElementById("results").innerHTML =
+        document.getElementById("results").innerHTML + 
+        response.results[rest].name+", "
         +response.results[rest].geometry.location.lat+" latitud, "
         +response.results[rest].geometry.location.lng+" longitud, "
-        +response.results[rest].vicinity+", "
-        +response.results[rest].types;
+        +"adreça: "+ response.results[rest].vicinity+", "
+        +response.results[rest].types+" ";
            }
     });
 }
