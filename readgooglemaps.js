@@ -16,20 +16,22 @@ function loadJSON(callback) {
 function viewJSON() {
     loadJSON(function(response) {
         /* Aqui l'objecte response representa l'objecte JSON que ens 
-           ha retornat el servidor */
-           document.getElementById("results").innerHTML = "<ul>";
-           for (rest in response.results) {
-
+        ha retornat el servidor */
+        document.getElementById("results").innerHTML = "<ul>";
+        for (rest in response.results) {
+            
+            document.getElementById("results").innerHTML =
+            document.getElementById("results").innerHTML + "<li><strong>"+
+            response.results[rest].name+". </strong>"
+            +"<i>Coordenades: </i>"+response.results[rest].geometry.location.lat+" latitud, "
+            +response.results[rest].geometry.location.lng+" longitud. "
+            +"<i>Adreça: </i>"+ response.results[rest].vicinity+". "
+            +"<i>Tipus d'establiment: </i>"+response.results[rest].types+"</li>";
+        }
         document.getElementById("results").innerHTML =
-        document.getElementById("results").innerHTML + "<li><strong>"+
-        response.results[rest].name+". </strong>"
-        +"<i>Coordenades: </i>"+response.results[rest].geometry.location.lat+" latitud, "
-        +response.results[rest].geometry.location.lng+" longitud. "
-        +"<i>Adreça: </i>"+ response.results[rest].vicinity+". "
-        +"<i>Tipus d'establiment: </i>"+response.results[rest].types+"</li>";
-           }
-           document.getElementById("results").innerHTML =
-           document.getElementById("results").innerHTML + "</ul>"
+        document.getElementById("results").innerHTML + "</ul>"
+        /* Aquesta funció recorre l'objecte JSON que ens ha retornat el servidor i ens mostra
+        els resultats en una llista desordenada */
     });
 }
 
