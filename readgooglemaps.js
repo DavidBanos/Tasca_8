@@ -21,12 +21,12 @@ function viewJSON() {
            for (rest in response.results) {
 
         document.getElementById("results").innerHTML =
-        document.getElementById("results").innerHTML + "<li>"+
-        response.results[rest].name+", "
-        +"Coordenades: "+response.results[rest].geometry.location.lat+" latitud, "
+        document.getElementById("results").innerHTML + "<li><strong>"+
+        response.results[rest].name+", </strong>"
+        +"<i>Coordenades: </i>"+response.results[rest].geometry.location.lat+" latitud, "
         +response.results[rest].geometry.location.lng+" longitud, "
-        +"adreça: "+ response.results[rest].vicinity+", "
-        +"Tipus d'establiment: "+response.results[rest].types+"</li>";
+        +"<i>adreça: </i>"+ response.results[rest].vicinity+", "
+        +"<i>Tipus d'establiment: </i>"+response.results[rest].types+"</li>";
            }
            document.getElementById("results").innerHTML =
            document.getElementById("results").innerHTML + "</ul>"
