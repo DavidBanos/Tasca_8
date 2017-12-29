@@ -22,10 +22,10 @@ function viewJSON() {
 
         document.getElementById("results").innerHTML =
         document.getElementById("results").innerHTML + "<li><strong>"+
-        response.results[rest].name+", </strong>"
+        response.results[rest].name+". </strong>"
         +"<i>Coordenades: </i>"+response.results[rest].geometry.location.lat+" latitud, "
-        +response.results[rest].geometry.location.lng+" longitud, "
-        +"<i>adreça: </i>"+ response.results[rest].vicinity+", "
+        +response.results[rest].geometry.location.lng+" longitud. "
+        +"<i>Adreça: </i>"+ response.results[rest].vicinity+". "
         +"<i>Tipus d'establiment: </i>"+response.results[rest].types+"</li>";
            }
            document.getElementById("results").innerHTML =
