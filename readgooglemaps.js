@@ -26,12 +26,13 @@ function viewJSON() {
             +"<i>Coordenades: </i>"+response.results[rest].geometry.location.lat+" latitud, "
             +response.results[rest].geometry.location.lng+" longitud. "
             +"<i>Adreça: </i>"+ response.results[rest].vicinity+". "
-            +"<i>Tipus d'establiment: </i>"+response.results[rest].types+"</li>";
+            +"<i>Tipus d'establiment: </i>"+response.results[rest].types+". "
+            +"<i>Icona: </i><img src ="+response.results[rest].icon+"></li>";
         }
+        console.log(document.getElementById("results").innerHTML);
         document.getElementById("results").innerHTML =
         document.getElementById("results").innerHTML + "</ul>"
-        /* Aquesta funció recorre l'objecte JSON que ens ha retornat el servidor i ens mostra
-        els resultats en una llista desordenada */
+        // Aquesta funció recorre l'objecte JSON que ens ha retornat el servidor i ens mostra la lliste de resultats
     });
 }
 
